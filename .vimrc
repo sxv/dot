@@ -1,13 +1,15 @@
-:nnoremap q :q<Enter>
-:nnoremap w :wq<Enter>
-:nnoremap Q :q!<Enter>
-:nnoremap W :wq!<Enter>
-:map <C-W> <C-C>:wq!<Enter>
-set number
-:nnoremap <C-3> :set nonumber!<CR>
-:nnoremap <C-L> :set nonumber!<CR>
-:nnoremap <A-left> :<C-left>
-:syntax on
+:set number
+:set autoread
 :set splitbelow
 :set splitright
+:set columns=80
+"
+:map # :set invnumber<Enter>
+"
+:nnoremap Q :q!<Enter>
+:nnoremap w :w<Enter>
+:nnoremap W :wq!<Enter>
+:nnoremap <A-left> <C-left>
+:nnoremap <A-right> <C-right>
+"
 
