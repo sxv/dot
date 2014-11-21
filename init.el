@@ -33,6 +33,9 @@
         (split-window-vertically)
         (other-window 1)
         (switch-to-buffer buf)))
+(projectile-global-mode)
+(setq projectile-completion-system 'helm)
+(helm-projectile-on)
 ;;
 
 
