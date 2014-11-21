@@ -14,6 +14,7 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (add-to-list 'load-path "~/.emacs.d/themes")
 (load-theme 'evenhold t)
+(global-hl-line-mode 1)
 (set-face-background 'hl-line "#222")
 (set-face-foreground 'highlight nil)
 ;;
@@ -45,7 +46,6 @@
 (mouse-wheel-mode t)
 (show-paren-mode t)
 (line-number-mode t)
-(global-hl-line-mode 1)
 (scroll-bar-mode -1)
 (menu-bar-mode -1)
 (tool-bar-mode -1)
