@@ -33,6 +33,14 @@
     }
   },
   {
+      "keys": ["u"],
+      "command": "dired_up",
+      "context": [
+        { "key": "selector", "operator": "equal", "operand": "text.dired" },
+        { "key": "setting.dired_rename_mode", "operand": false }
+      ]
+  },
+  {
     "keys": ["o"],
     "command": "dired_select",//, "args": {"and_close": true},
     "context": [
