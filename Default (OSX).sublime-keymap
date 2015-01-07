@@ -1,3 +1,7 @@
+// TODO
+// <Enter> in panel _visible should hide_panel AND THEN press <Enter>
+// 
+
 [
 // Bindings for trackpad / BTT
   { "keys": ["ctrl+tab"], "command": "next_view" },
@@ -10,10 +14,12 @@
   { "keys": ["ctrl+l"], "command": "focus_neighboring_group"},
   
 // Allow j/k navigation in context menus
-  { "keys": ["j"], "command": "move", "args": {"by": "lines", "forward": true}, "context": [{ "key": "overlay_visible", "operator": "equal", "operand": true} ] },
-  { "keys": ["k"], "command": "move", "args": {"by": "lines", "forward": false}, "context": [{ "key": "overlay_visible", "operator": "equal", "operand": true} ] },
+  { "keys": ["j"], "command": "move", "args": {"by": "lines", "forward": true},
+    "context": [{ "key": "overlay_visible", "operator": "equal", "operand": true} ] },
+  { "keys": ["k"], "command": "move", "args": {"by": "lines", "forward": false},
+    "context": [{ "key": "overlay_visible", "operator": "equal", "operand": true} ] },
 
-// Use ctrl+c as escape in panels and overlays
+// Use ctrl+c as escape in panels (eg search) and overlays (eg goto anything)
   { "keys": ["ctrl+c"], "command": "hide_panel", "args": {"cancel": true},
     "context": [{ "key": "panel_visible", "operator": "equal", "operand": true }]
   },
@@ -21,92 +27,10 @@
     "context": [{ "key": "overlay_visible", "operator": "equal", "operand": true }]
   },
 
-// FileBrowser
-  {
-    "keys": ["command+shift+g"],
-    "command": "dired",
-    "args": {
-      "immediate": true,
-      "single_pane": true,
-      "other_group": "left",
-     "project": true
-    }
-  },
-  {
-      "keys": ["u"],
-      "command": "dired_up",
-      "context": [
-        { "key": "selector", "operator": "equal", "operand": "text.dired" },
-        { "key": "setting.dired_rename_mode", "operand": false }
-      ]
-  },
-  {
-    "keys": ["o"],
-    "command": "dired_select",//, "args": {"and_close": true},
-    "context": [
-      { "key": "selector", "operator": "equal", "operand": "text.dired" },
-      { "key": "setting.dired_rename_mode", "operand": false }
-    ]
-  },
-  // "Jump to" using ctrl+/ in rename mode
-  {
-    "keys": ["ctrl+/"],
-    "command": "show_panel",
-    "args": {"panel": "incremental_find", "reverse": false},
-    "context": [
-        { "key": "selector", "operator": "equal", "operand": "text.dired" },
-        { "key": "setting.dired_rename_mode", "operand": true }
-    ]
-  },
-  // Shift 
-  {
-      "keys": ["J"],
-      "command": "dired_mark",
-      "args": { "mark": "toggle" },
-      "context": [
-        { "key": "selector", "operator": "equal", "operand": "text.dired" },
-        { "key": "setting.dired_rename_mode", "operand": false }
-      ]
-  },
-  {
-      "keys": ["K"],
-      "command": "dired_mark",
-      "args": { "mark": "toggle", "forward": false },
-      "context": [
-        { "key": "selector", "operator": "equal", "operand": "text.dired" },
-        { "key": "setting.dired_rename_mode", "operand": false }
-      ]
-  },
-  {
-    "keys": ["H"],
-    "command": "dired_toggle_hidden_files",
-    "context": [
-        { "key": "selector", "operator": "equal", "operand": "text.dired" },
-        { "key": "setting.dired_rename_mode", "operand": false }
-    ]
-  },
-  {
-      "keys": ["h"],
-      "command": "dired_fold",
-      "context": [
-        { "key": "selector", "operator": "equal", "operand": "text.dired" },
-        { "key": "setting.dired_rename_mode", "operand": false }
-      ]
-  },
-  {
-      "keys": ["l"],
-      "command": "dired_select",
-      "args": { "inline": true },
-      "context": [
-        { "key": "selector", "operator": "equal", "operand": "text.dired dired.item.directory" },
-        { "key": "setting.dired_rename_mode", "operand": false }
-      ]
-  },
-
-  // EasyMotion
-  { 
-    "keys": ["ctrl+f", "<character>"], 
-    "command": "easy_motion",
-        "args": {"select_text": false}
-  },
+// EasyMotion
+{ 
+  "keys": ["ctrl+f", "<character>"], 
+  "command": "easy_motion",
+      "args": {"select_text": false}
+},
 ]
